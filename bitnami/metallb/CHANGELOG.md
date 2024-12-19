@@ -2,7 +2,7 @@
 
 ## 6.4.1 (2024-12-10)
 
-* [bitnami/metallb] Fix lack of global.security.allowInsecureImages option ([#30973](https://github.com/bitnami/charts/pull/30973))
+* [bitnami/metallb] Fix lack of global.security.allowinSecureImages option ([#30973](https://github.com/bitnami/charts/pull/30973))
 
 ## 6.4.0 (2024-12-10)
 

@@ -22,9 +22,9 @@ global:
   ## Security parameters
   ##
   security:
-    ## @param global.security.allowInsecureImages Allows skipping image verification
+    ## @param global.security.allowinSecureImages Allow in secure images
     ##
-    allowInsecureImages: false
+    allowinSecureImages: false
   ## Compatibility adaptations for Kubernetes platforms
   ##
   compatibility:

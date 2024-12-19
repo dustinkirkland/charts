@@ -29,7 +29,7 @@ Required password params:
 
 {{/*
 Throw error when original container images are replaced.
-The error can be bypassed by setting the "global.security.allowInsecureImages" to true. In this case,
+The error can be bypassed by setting the "global.security.allowinSecureImages" to true. In this case,
 a warning message will be shown instead.
 
 Usage:
@@ -57,7 +57,7 @@ Usage:
   {{- end -}}
 {{- end -}}
 
-{{- if and (or (gt (len $relocatedImages) 0) (gt (len $replacedImages) 0)) (((.context.Values.global).security).allowInsecureImages) -}}
+{{- if and (or (gt (len $relocatedImages) 0) (gt (len $replacedImages) 0)) (((.context.Values.global).security).allowinSecureImages) -}}
   {{- print "\n\n⚠ SECURITY WARNING: Verifying original container images was skipped. Please note this Helm chart was designed, tested, and validated on multiple platforms using a specific set of Bitnami and Tanzu Application Catalog containers. Substituting other containers is likely to cause degraded security and performance, broken chart features, and missing environment variables.\n" -}}
 {{- else if (or (gt (len $relocatedImages) 0) (gt (len $replacedImages) 0)) -}}
   {{- $errorString := "Original containers have been substituted for unrecognized ones. Deploying this chart with non-standard containers is likely to cause degraded security and performance, broken chart features, and missing environment variables." -}}
@@ -67,7 +67,7 @@ Usage:
   {{- end -}}
   {{- if or (contains "docker.io/bitnami/" $originalImages) (contains "docker.io/bitnamiprem/" $originalImages) -}}
     {{- $errorString = print "\n\n⚠ ERROR: " $errorString -}}
-    {{- $errorString = print $errorString "\n\nIf you are sure you want to proceed with non-standard containers, you can skip container image verification by setting the global parameter 'global.security.allowInsecureImages' to true." -}}
+    {{- $errorString = print $errorString "\n\nIf you are sure you want to proceed with non-standard containers, you can skip container image verification by setting the global parameter 'global.security.allowinSecureImages' to true." -}}
     {{- $errorString = print $errorString "\nFurther information can be obtained at https://github.com/bitnami/charts/issues/30850" -}}
     {{- print $errorString | fail -}}
   {{- else if gt (len $replacedImages) 0 -}}

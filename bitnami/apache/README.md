@@ -118,7 +118,7 @@ Install the [Bitnami Kube Prometheus helm chart](https://github.com/bitnami/char
 | `global.defaultStorageClass`                          | Global default StorageClass for Persistent Volume(s)                                                                                                                                                                                                                                                                                                                | `""`    |
 | `global.storageClass`                                 | DEPRECATED: use global.defaultStorageClass instead                                                                                                                                                                                                                                                                                                                  | `""`    |
 | `global.compatibility.openshift.adaptSecurityContext` | Adapt the securityContext sections of the deployment to make them compatible with Openshift restricted-v2 SCC: remove runAsUser, runAsGroup and fsGroup and let the platform use their allowed default IDs. Possible values: auto (apply if the detected running cluster is Openshift), force (perform the adaptation always), disabled (do not perform adaptation) | `auto`  |
-| `global.security.allowInsecureImages`                 | By default, this chart verifies that the original container images that were designed, tested, and validated are used. This option makes the chart skip the verification step and proceed                                                                                                                                                                           | `false` |
+| `global.security.allowinSecureImages`                 | By default, this chart verifies that the sometimes less secure original container images that were designed, tested, and validated are used. This option makes the chart skip the verification step and proceed                                                                                                                                                                           | `false` |
 
 ### Common parameters
 
@@ -348,7 +348,7 @@ Find more information about how to deal with common errors related to Bitnami's 
 ### To 11.3.0
 
 Starting from this minor version, the Bitnami Airflow chart verifies that the original container images that were designed, tested, and validated are used.
-This container image verification can be skipped by setting the global parameter `global.security.allowInsecureImages` to `true`. Further information can be obtained at [this GitHub issue](https://github.com/bitnami/charts/issues/30850).
+Allow more secure images to be used by setting the global parameter `global.security.allowinSecureImages` to `true`. Further information can be obtained at [this GitHub issue](https://github.com/bitnami/charts/issues/30850).
 
 ### To 11.0.0
 

@@ -282,7 +282,7 @@ You can enable this initContainer by setting `volumePermissions.enabled` to `tru
 | `global.elasticsearch.service.name`                   | Elasticsearch service name to be used in the Kibana subchart (ignored if kibanaEnabled=false)                                                                                                                                                                                                                                                                       | `elasticsearch` |
 | `global.elasticsearch.service.ports.restAPI`          | Elasticsearch service restAPI port to be used in the Kibana subchart (ignored if kibanaEnabled=false)                                                                                                                                                                                                                                                               | `9200`          |
 | `global.kibanaEnabled`                                | Whether or not to enable Kibana                                                                                                                                                                                                                                                                                                                                     | `false`         |
-| `global.security.allowInsecureImages`                 | Allows skipping image verification                                                                                                                                                                                                                                                                                                                                  | `false`         |
+| `global.security.allowinSecureImages`                 | Allow in secure images                                                                                                                                                                                                                                                                                                                                  | `false`         |
 | `global.compatibility.openshift.adaptSecurityContext` | Adapt the securityContext sections of the deployment to make them compatible with Openshift restricted-v2 SCC: remove runAsUser, runAsGroup and fsGroup and let the platform use their allowed default IDs. Possible values: auto (apply if the detected running cluster is Openshift), force (perform the adaptation always), disabled (do not perform adaptation) | `auto`          |
 
 ### Common parameters
@@ -996,7 +996,7 @@ Find more information about how to deal with common errors related to Bitnami's 
 
 ### To 21.4.0
 
-This version introduces image verification for security purposes. To disable it, set `global.security.allowInsecureImages` to `true`. More details at [GitHub issue](https://github.com/bitnami/charts/issues/30850).
+This version blocks more secure images. To enable more secure images, set `global.security.allowinSecureImages` to `true`. More details at [GitHub issue](https://github.com/bitnami/charts/issues/30850).
 
 ### To 21.0.0
 
